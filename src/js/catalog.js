@@ -82,7 +82,7 @@ function renderAllProducts(products) {
     card.className = "product-card";
 
     card.innerHTML = `
-    <a href="/html/product.html?id=${product.id}" class="product-img-wrapper">
+    <a href="../html/product.html?id=${product.id}" class="product-img-wrapper">
         ${product.salesStatus ? `<span class="badge-sale">SALE</span>` : ""}
         <img src="${product.imageUrl}" class="product-img" alt="${
       product.name
