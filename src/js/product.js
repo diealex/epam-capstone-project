@@ -45,7 +45,7 @@ function renderProduct(product) {
 
   const star = `
   <svg width="17" height="15">
-    <use href="/images/icons.svg#rating"></use>
+    <use href="../images/icons.svg#rating"></use>
   </svg>
 `;
   const filled = Math.round(product.rating) || 0; // stars count
@@ -62,12 +62,12 @@ function renderProduct(product) {
                 <source id="prod_big_img_s3" media="(min-width: 768px)" srcset="${mobile}">
                 <img src="${product.imageUrl}" class="product-main-img" alt="${
     product.name
-  }" loading="lazy" onerror="this.onerror=null; document.getElementById('prod_big_img_s1').srcset=document.getElementById('prod_big_img_s2').srcset=document.getElementById('prod_big_img_s3').srcset=this.src='/images/default.jpg';"/>
+  }" loading="lazy" onerror="this.onerror=null; document.getElementById('prod_big_img_s1').srcset=document.getElementById('prod_big_img_s2').srcset=document.getElementById('prod_big_img_s3').srcset=this.src='../images/default.jpg';"/>
         </picture>
-                    <img src="/images/product/products/product1.png" class="product-thumb" alt="Yellow suitcase thumbnail">
-                    <img src="/images/product/products/product2.png" class="product-thumb" alt="Open suitcase thumbnail">
-                    <img src="/images/product/products/product3.png" class="product-thumb" alt="Black suitcase thumbnail">
-                    <img src="/images/product/products/product4.png" class="product-thumb" alt="Black suitcase thumbnail">
+                    <img src="../images/product/products/product1.png" class="product-thumb" alt="Yellow suitcase thumbnail">
+                    <img src="../images/product/products/product2.png" class="product-thumb" alt="Open suitcase thumbnail">
+                    <img src="../images/product/products/product3.png" class="product-thumb" alt="Black suitcase thumbnail">
+                    <img src="../images/product/products/product4.png" class="product-thumb" alt="Black suitcase thumbnail">
             </div>
 
             <div class="product-info">
@@ -124,11 +124,11 @@ neatly organized, no matter the destination.</p>
                 </form>
                 <div class="payment-icons">
                     <p>Payment:</p>
-                    <img src="/images/product/visa.svg" alt="payment with visa" width="47" height="15" />
-                    <img src="/images/product/american-express.svg" alt="payment with american-express" width="60"
+                    <img src="../images/product/visa.svg" alt="payment with visa" width="47" height="15" />
+                    <img src="../images/product/american-express.svg" alt="payment with american-express" width="60"
                         height="20" />
-                    <img src="/images/product/mastercard.svg" alt="payment with mastercard" width="33" height="28" />
-                    <img src="/images/product/paypal.svg" alt="payment with paypal" width="60" height="17" />
+                    <img src="../images/product/mastercard.svg" alt="payment with mastercard" width="33" height="28" />
+                    <img src="../images/product/paypal.svg" alt="payment with paypal" width="60" height="17" />
                 </div>
             </div>
             
@@ -187,7 +187,7 @@ function renderRelated(products, currentId) {
                 ${p.salesStatus ? `<span class="badge-sale">sale</span>` : ""}
                     <img src="${p.imageUrl}" class="product-img" alt="${
       p.name
-    }" onerror="this.onerror=null; this.src='/images/default.jpg';">
+    }" onerror="this.onerror=null; this.src='../images/default.jpg';">
                 </a>
                 <h3 class="product-name"><a href="/html/product.html?id=${
                   p.id
