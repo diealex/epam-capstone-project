@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css">
+    <link rel="stylesheet" href="../css/catalog.css" />
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <title>Best Shop</title>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="upper-header-wrapper">
+                <ul class="social-media-wrapper">
+                    <li class="social-media-item">
+                        <a href="#">
+                            <svg width="20" height="20">
+                                <use href="../images/icons.svg#facebook"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="social-media-item">
+                        <a href="#">
+                            <svg width="25" height="20">
+                                <use href="../images/icons.svg#twitter"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="social-media-item">
+                        <a href="#">
+                            <svg width="20" height="20">
+                                <use href="../images/icons.svg#instagram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+
+                <a href="index.html" class="header-logo-wrapper">
+                    <div class="header-logo-bg"><img src="../images/logo-suitcase-1x.png" alt="Best Shop logo"
+                            width="32">
+                    </div>
+                    <h1 class="header-title">Best Shop</h1>
+                </a>
+
+                <ul class="header-right-icons">
+                    <li class="header-right-icons-item">
+                        <button id="openLogin" class="login-btn" aria-label="Open Login">
+                            <svg width="24" height="27">
+                                <use href="../images/icons.svg#user"></use>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="header-right-icons-item">
+                        <a href="../html/cart.html" aria-label="Shopping Cart" class="cart-icon-wrapper" target="_self">
+                            <svg width="27" height="30">
+                                <use href="../images/icons.svg#cart"></use>
+                            </svg>
+                            <span class="cart-count"></span>
+                        </a>
+                    </li>
+                </ul>
+
+                <button class="burger-btn" aria-label="Open Menu">
+                    <svg width="32" height="32">
+                        <use href="../images/icons.svg#burger-icon"></use>
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="nav" aria-label="Main navigation">
+                <ul class="nav-wrapper">
+                    <li class="nav-item"><a href="index.html">Home</a></li>
+                    <li class="nav-item dropdown"><a href="./catalog.html" class="active">Catalog</a></li>
+                    <li class="nav-item"><a href="./about.html">About Us</a></li>
+                    <li class="nav-item"><a href="./contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+
+            <div class="mobile-overlay">
+                <nav class="mobile-nav" aria-label="Mobile navigation">
+                    <button class="mobile-close-btn" aria-label="Close Menu">✕</button>
+                    <ul class="mobile-nav-wrapper">
+                        <li class="mobile-nav-item"><a href="index.html" class="active">Home</a></li>
+                        <li class="mobile-nav-item dropdown"><a href="./catalog.html">Catalog</a></li>
+                        <li class="mobile-nav-item"><a href="./about.html">About Us</a></li>
+                        <li class="mobile-nav-item"><a href="./contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- LOGIN MODAL -->
+    <div id="loginModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content" aria-modal="true">
+            <form id="loginForm" novalidate>
+                <!-- Email -->
+                <label for="loginEmail">Email address <span>*</span></label>
+                <input type="email" id="loginEmail" name="email" required />
+                <p class="error-msg" id="emailError"></p>
+
+                <!-- Password -->
+                <label for="loginPassword">Password <span>*</span></label>
+                <div class="password-wrapper">
+                    <input type="password" id="loginPassword" name="password" required />
+                    <button type="button" class="toggle-password" id="togglePassword" aria-label="Show Password">
+                        <svg width="18" height="14">
+                            <use href="/images/icons.svg#eye-icon"></use>
+                        </svg>
+                    </button>
+                </div>
+                <p class="error-msg" id="passwordError"></p>
+
+                <!-- Remember + Forgot -->
+                <div class="form-row checkbox-wrapper">
+                    <label class="remember-me">
+                        <input type="checkbox" class="hidden-checkbox" />
+                        <div class="fake-checkbox-wrapper">
+                            <svg width="16" height="16" class="custom-checkbox">
+                                <use href="/images/icons.svg#custom-checkbox"></use>
+                            </svg>
+                            <svg width="16" height="16" class="custom-checkmark">
+                                <use href="/images/icons.svg#custom-checkmark"></use>
+                            </svg>
+                        </div>
+                        Remember me
+                    </label>
+
+                    <a href="#" class="forgot-link">Forgot Your Password?</a>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn-submit">Log In</button>
+            </form>
+        </div>
+    </div>
+
+    <main>
+        <section aria-labelledby="filters" class="product-filters container">
+            <h2 id="filters-title" class="visually-hidden">Product Filters</h2>
+            <form class="filters-form" id="filters-form" method="get" action="#">
+                <fieldset class="filters-fieldset">
+                    <legend class="visually-hidden">Filter Options</legend>
+                    <!-- Size Filter -->
+                    <div class="filter-group">
+                        <label for="filter-size">Size</label>
+                        <select id="filter-size" name="size" required>
+                            <option value="" disabled selected hidden>Choose option</option>
+                        </select>
+                    </div>
+
+                    <!-- Color Filter -->
+                    <div class="filter-group">
+                        <label for="filter-color">Color</label>
+                        <select id="filter-color" name="color" required>
+                            <option value="" disabled selected hidden>Choose option</option>
+                        </select>
+                    </div>
+
+                    <!-- Category Filter -->
+                    <div class="filter-group">
+                        <label for="filter-category">Category</label>
+                        <select id="filter-category" name="category" required>
+                            <option value="" disabled selected hidden>Choose option</option>
+                        </select>
+                    </div>
+
+                    <!-- Sales Filter -->
+
+                    <label for="filter-sale" class="filter-group">Sales
+                        <input type="checkbox" id="filter-sale" name="on-sale" value="true" />
+                        <span></span>
+                    </label>
+
+                </fieldset>
+
+                <!-- Filter Actions -->
+                <div class="filter-actions">
+                    <button type="reset" class="btn-filter btn-clear">Clear Filters</button>
+                    <button type="button" id="filters-hide" class="btn-filter">Hide Filters</button>
+                </div>
+            </form>
+        </section>
+
+        <div class="catalog-sidebar-wrapper container">
+        </div>
+
+
+        <!-- Catalog Section -->
+        <section aria-labelledby="catalog" class="catalog container">
+            <h1 id="catalog-title" class="visually-hidden">Product Catalog</h1>
+            <!-- Sorting and Results Info -->
+            <div class="catalog-layout">
+                <div class="catalog-header">
+                    <p class="results-info"></p>
+                    <div class="sorting">
+                        <label for="sort-products" class="visually-hidden">Sort Products</label>
+                        <select id="sort-products" name="sort">
+                            <option value="default">Default Sorting</option>
+                            <option value="popularity">Sort by Popularity</option>
+                            <option value="rating">Sort by Rating</option>
+                            <option value="price-low">Sort by Price: Low to High</option>
+                            <option value="price-high">Sort by Price: High to Low</option>
+                        </select>
+                    </div>
+                    <a href="#" id="filters-toggle">
+                        <svg width="24" height="25">
+                            <use href="../images/icons.svg#filters"></use>
+                        </svg>
+                    </a>
+                </div>
+                <!-- Main Product Grid -->
+                <section class="product-grid"></section>
+                <!-- Pagination -->
+                <nav class="pagination" aria-label="Catalog Pagination">
+                </nav>
+            </div>
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="search">
+                    <label for="search-models" class="visually-hidden">Search Models</label>
+                    <input type="search" id="search-models" placeholder="Search Models" />
+                    <svg width="20" height="20" class="search-icon">
+                        <use href="../images/icons.svg#loupe"></use>
+                    </svg>
+                </div>
+                <div class="top-sets">
+                    <h2>Top Best Sets</h2>
+                    <ul class="product-list">
+                    </ul>
+                </div>
+            </aside>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <section class="benefits">
+            <div class="container benefits-container">
+                <h2>Our Benefits</h2>
+                <ul class="benefits-wrapper">
+                    <li class="benefits-item">
+                        <img src="../images/benefits-1.png" alt="Globe with a plane icon" width="60" height="60">
+                        <p>Velit nisl sodales eget donec quis. volutpat orci.</p>
+                    </li>
+                    <li class="benefits-item"><img src="../images/benefits-2.png" alt="Maintenance service truck"
+                            width="60" height="60">
+                        <p>Dolor eu varius. Morbi fermentum velit nisl.</p>
+                    </li>
+                    <li class="benefits-item"><img src="../images/benefits-3.png" alt="Two coins with a dollar sign"
+                            width="60" height="60">
+                        <p>Malesuada fames ac ante ipsum primis in faucibus.</p>
+                    </li>
+                    <li class="benefits-item"><img src="../images/benefits-4.png" alt="Graduation hat" width="60"
+                            height="60">
+                        <p>Nisl sodales eget donec quis. volutpat orci.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="footer container">
+            <div class="footer-three-cols">
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li class="footer-column-list-item><a href=" #">Organisation </a></li>
+                        <li class="footer-column-list-item><a href=" #">Partners</a></li>
+                        <li class="footer-column-list-item><a href=" #">Clients</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Interesting Links</h4>
+                    <ul class="footer-column-list">
+                        <li class="footer-column-list-item><a href=" #">Photo Gallery</a></li>
+                        <li class="footer-column-list-item><a href=" #">Our Team</a></li>
+                        <li class="footer-column-list-item><a href=" #">Socials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Achievements</h4>
+                    <ul>
+                        <li class="footer-column-list-item><a href=" #">Winning Awards</a></li>
+                        <li class="footer-column-list-item><a href=" #">Press</a></li>
+                        <li class="footer-column-list-item><a href=" #">Our Amazing Clients</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-contact-us">
+                <h4>Contact Us</h4>
+                <p>Bendum dolor eu varius. Morbi fermentum velitsodales egetonec. volutpat orci. Sed ipsum felis,
+                    tristique egestas et, convallis ac velitn consequat nec luctus.</p>
+            </div>
+
+            <div class="footer-shipping">
+                <h4>Shipping Information</h4>
+                <p>Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac. Ut sit amet erat nec nibh
+                    rhoncus varius in non lorem. Donec interdum, lectus in convallis pulvinar, enim elit porta
+                    sapien, vel finibus erat felis sed neque. Etiam aliquet neque sagittis erat tincidunt aliquam.
+                </p>
+            </div>
+
+
+            <ul class="footer-icons-wrapper">
+                <li class="footer-item">
+                    <a href="tel:+632366322" class="footer-icon">
+                        <svg width="24" height="24">
+                            <use href="../images/icons.svg#phone"></use>
+                        </svg>
+                        Phone: (+63) 236 6322
+                    </a>
+                </li>
+                <li class="footer-item">
+                    <a href="mailto:public@news.com" class="footer-icon">
+                        <svg width="24" height="18">
+                            <use href="../images/icons.svg#email"></use>
+                        </svg>
+                        public@news.com
+                    </a>
+                </li>
+                <li class="footer-item">
+                    <a href="#">
+                        <svg width="27" height="27">
+                            <use href="../images/icons.svg#opening-hrs"></use>
+                        </svg>
+                    </a>
+                    <p>Mon - Fri: 10am - 6pm <br>
+                        Sat - Sun: 10am - 6pm</p>
+                </li>
+                <li class="footer-item">
+                    <a href="#">
+                        <svg width="20" height="24">
+                            <use href="../images/icons.svg#location"></use>
+                        </svg>
+                    </a>
+                    <address>639 Jade Valley,<br> Washington Dc</address>
+                </li>
+            </ul>
+        </section>
+        <p class="copyright">© Copyright 2025</p>
+    </footer>
+    <script type="module" src="../js/main.js" defer></script>
+    <script src="../js/catalog.js" defer></script>
+    <script src="../js/home.js" defer></script>
+    <script type="module" src="../js/cart.js" defer></script>
+</body>
+
+</html>

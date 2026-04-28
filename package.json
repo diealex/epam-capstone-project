@@ -1,0 +1,24 @@
+{
+  "name": "project-template",
+  "version": "1.0.0",
+  "description": "Capstone Project Template ",
+  "repository": {
+    "type": "git",
+    "url": "https://autocode.git.epam.com/campus_javascript/capstone-project/project-template.git"
+  },
+  "license": "ISC",
+  "author": "Oleksandra Klochkova",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd ./src && copyfiles -e scss/**/* **/* ../dist",
+    "sass": "sass src/scss:dist/css --watch",
+    "dev": "cd ./src && live-server --port=8080"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.4.1",
+    "live-server": "^1.2.2",
+    "sass": "^1.94.2"
+  }
+}

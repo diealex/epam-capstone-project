@@ -1,0 +1,126 @@
+/* ===============================
+   Base / Global Styles
+=================================*/
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-size: clamp(14px, 1vw + 1rem, 18px);
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--black);
+  background-color: var(--white);
+  position: relative;
+}
+ul,
+ol {
+  list-style-type: none;
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  font-style: normal;
+}
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+input,
+textarea,
+button {
+  font-family: inherit;
+  line-height: inherit;
+  color: currentColor;
+}
+button {
+  cursor: pointer;
+}
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --lila: #b92770;
+  --lila-accent: #b41c74;
+  --lila-transparent: #b9277080;
+  --lila-accent-transparent: #b9277080;
+  --logo-bg: #c2187b;
+  --brown: #504e4a;
+  --grey-bg: #e7e8e9;
+  --line: #727174;
+  --shadow: #c1c7d4b3;
+  --shadow-form: #C1C7D44D;
+  --mini-shadow:#C1C7D466;
+  --qty-selector: #707070;
+  --gray-line: #d9d9d9;
+  --copyright: #00000059;
+  --border: #e9e9ed;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+.hidden {
+  visibility: hidden;
+}
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+  @media (min-width: 1024px) {
+    max-width: 85%;
+  }
+  @media (min-width: 1440px) {
+    max-width: 75%;
+  }
+}
+.btn {
+  background-color: var(--lila);
+  color: var(--white);
+  white-space: nowrap;
+  width: fit-content;
+  padding: 0.75rem 1.5rem;
+  display: inline-block;
+  transition: background 0.3s ease;
+  font-weight: 700;
+  border: none;
+  &:hover {
+    background: var(--lila-accent);
+  }
+}
+
+.headline {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.headline h2 {
+font-weight: 900;
+font-size: 2.5rem;
+}
+
+.headline p {
+font-weight: 400;
+font-size: 1rem;
+color: var(--brown);
+}

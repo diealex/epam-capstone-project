@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css">
+    <link rel="stylesheet" href="/css/product.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <link rel="stylesheet" href="/css/cart.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>Best Shop</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="upper-header-wrapper">
+                <ul class="social-media-wrapper">
+                    <li class="social-media-item">
+                        <a href="#">
+                            <svg width="20" height="20">
+                                <use href="/images/icons.svg#facebook"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="social-media-item">
+                        <a href="#">
+                            <svg width="25" height="20">
+                                <use href="/images/icons.svg#twitter"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="social-media-item">
+                        <a href="#">
+                            <svg width="20" height="20">
+                                <use href="/images/icons.svg#instagram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+
+                <a href="index.html" class="header-logo-wrapper">
+                    <div class="header-logo-bg"><img src="../images/logo-suitcase-1x.png" alt="Best Shop logo"
+                            width="32">
+                    </div>
+                    <h1 class="header-title">Best Shop</h1>
+                </a>
+
+                <ul class="header-right-icons">
+                    <li class="header-right-icons-item">
+                        <button id="openLogin" class="login-btn" aria-label="Open Login">
+                            <svg width="24" height="27">
+                                <use href="../images/icons.svg#user"></use>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="header-right-icons-item">
+                        <a href="../html/cart.html" aria-label="Shopping Cart" class="cart-icon-wrapper" target="_self">
+                            <svg width="27" height="30">
+                                <use href="../images/icons.svg#cart"></use>
+                            </svg>
+                            <span class="cart-count"></span>
+                        </a>
+                    </li>
+                </ul>
+
+                <button class="burger-btn" aria-label="Open Menu">
+                    <svg width="32" height="32">
+                        <use href="/images/icons.svg#burger-icon"></use>
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="nav" aria-label="Main navigation">
+                <ul class="nav-wrapper">
+                    <li class="nav-item"><a href="./index.html">Home</a></li>
+                    <li class="nav-item dropdown"><a href="/html/catalog.html">Catalog</a></li>
+                    <li class="nav-item"><a href="/html/about.html">About Us</a></li>
+                    <li class="nav-item"><a href="/html/contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+
+            <div class="mobile-overlay">
+                <nav class="mobile-nav" aria-label="Mobile navigation">
+                    <button class="mobile-close-btn" aria-label="Close Menu">✕</button>
+                    <ul class="mobile-nav-wrapper">
+                        <li class="mobile-nav-item"><a href="./index.html" class="active">Home</a></li>
+                        <li class="mobile-nav-item dropdown"><a href="/html/catalog.html">Catalog</a></li>
+                        <li class="mobile-nav-item"><a href="/html/about.html">About Us</a></li>
+                        <li class="mobile-nav-item"><a href="/html/contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- LOGIN MODAL -->
+    <div id="loginModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content" aria-modal="true">
+            <form id="loginForm" novalidate>
+                <!-- Email -->
+                <label for="loginEmail">Email address <span>*</span></label>
+                <input type="email" id="loginEmail" name="email" required />
+                <p class="error-msg" id="emailError"></p>
+
+                <!-- Password -->
+                <label for="loginPassword">Password <span>*</span></label>
+                <div class="password-wrapper">
+                    <input type="password" id="loginPassword" name="password" required />
+                    <button type="button" class="toggle-password" id="togglePassword" aria-label="Show Password">
+                        <svg width="18" height="14">
+                            <use href="/images/icons.svg#eye-icon"></use>
+                        </svg>
+                    </button>
+                </div>
+                <p class="error-msg" id="passwordError"></p>
+
+                <!-- Remember + Forgot -->
+                <div class="form-row checkbox-wrapper">
+                    <label class="remember-me">
+                        <input type="checkbox" class="hidden-checkbox" />
+                        <div class="fake-checkbox-wrapper">
+                            <svg width="16" height="16" class="custom-checkbox">
+                                <use href="/images/icons.svg#custom-checkbox"></use>
+                            </svg>
+                            <svg width="16" height="16" class="custom-checkmark">
+                                <use href="/images/icons.svg#custom-checkmark"></use>
+                            </svg>
+                        </div>
+                        Remember me
+                    </label>
+
+                    <a href="#" class="forgot-link">Forgot Your Password?</a>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn-submit">Log In</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main class="layout">
+        <!-- Product Section -->
+        <section class="product-page container">
+            <div id="productContainer"></div>
+        </section>
+
+        <!-- Tabs -->
+        <section class="product-tabs container">
+            <div class="tabs">
+                <div class="tab active" data-tab="details">details</div>
+                <div class="tab" data-tab="reviews">reviews</div>
+                <div class="tab" data-tab="shipping">shipping policy</div>
+            </div>
+            <div id="details" class="tab-content active">
+                <div class="accordion-title">details</div>
+                <p>Vestibulum commodo sapien non elit porttitor, vitae volutpat nibh mollis. Nulla porta risus id neque
+                    tempor, in
+                    efficitur justo imperdiet. Etiam a ex at
+                    ante tincidunt imperdiet. Nunc congue ex vel nisl viverra, sit amet aliquet lectus ullamcorper.
+                    Praesent luctus lacus
+                    non lorem elementum, eu tristique
+                    sapien suscipit. Sed bibendum, ipsum nec viverra malesuada, erat nisi sodales purus, eget hendrerit
+                    dui ligula eu enim.
+                    Ut non est nisi. Pellentesque
+                    tristique pretium dolor eu commodo. Proin iaculis nibh vitae lectus mollis bibendum. Quisque varius
+                    eget urna sit amet
+                    luctus. Suspendisse potenti.
+                    Curabitur ac placerat est, sit amet sodales risus. Pellentesque viverra dui auctor, ullamcorper
+                    turpis pharetra,
+                    facilisis quam.</p>
+                <p>Proin iaculis nibh vitae lectus mollis bibendum. Quisque varius eget urna sit amet luctus.
+                    Suspendisse potenti.
+                    Curabitur ac placerat est, sit amet sodales
+                    risus. Pellentesque viverra dui auctor, ullamcorper turpis pharetra, facilisis quam. Proin iaculis
+                    nibh vitae lectus
+                    mollis bibendum.</p>
+                <p>Quisque varius eget urna sit amet luctus. Suspendisse potenti. Curabitur ac placerat est, sit amet
+                    sodales risus.
+                    Pellentesque viverra dui auctor,
+                    ullamcorper turpis pharetra, facilisis quam.</p>
+            </div>
+            <div id="reviews" class="tab-content">
+                <div class="accordion-title">reviews</div>
+                <div class="reviews">
+                    <div class="reviews-left">
+                        <h3>1 review for Global Explorer Max Comfort Suitcase Pro</h3>
+                        <div class="review-item">
+                            <img srcset="/images/product/ella-harper.png   1x, ./images/product/ella-harper-2x.png 2x"
+                                src="/images/product/ella-harper.png" alt="Reviewer Ella Harper" width="46" />
+                            <div class="review-item-wrapper">
+                                <div class="review-item-head">
+                                    <div class="review-name-date">
+                                        <strong>Ella Harper</strong>
+                                        <small>/ June 11, 2025</small>
+                                    </div>
+                                    <span class="product-rating">
+                                        <svg width="17" height="15" class="rating">
+                                            <use href="/images/icons.svg#rating"></use>
+                                        </svg>
+                                        <svg width="17" height="15" class="rating">
+                                            <use href="/images/icons.svg#rating"></use>
+                                        </svg>
+                                        <svg width="17" height="15" class="rating">
+                                            <use href="/images/icons.svg#rating"></use>
+                                        </svg>
+                                        <svg width="17" height="15" class="rating">
+                                            <use href="/images/icons.svg#rating"></use>
+                                        </svg>
+                                        <svg width="17" height="15" class="rating-empty">
+                                            <use href="/images/icons.svg#rating"></use>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <p>Proin iaculis nibh vitae lectus mollis bibendum. Quisque varius eget urna sit amet
+                                    luctus.
+                                    Suspendisse potenti curabitur ac placerat est, sit amet sodales risus.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="review-create">
+                        <h3>Add Review</h3>
+                        <p>Your email address won’t be shared with anybody. Required fields have the symbol
+                            <span>*</span>
+                        </p>
+                        <span class="rating-line">
+                            <p>rate product</p>
+                            <div class="product-rating">
+                                <svg width="17" height="15" class="rating">
+                                    <use href="/images/icons.svg#rating-empty"></use>
+                                </svg>
+                                <svg width="17" height="15" class="rating">
+                                    <use href="/images/icons.svg#rating-empty"></use>
+                                </svg>
+                                <svg width="17" height="15" class="rating">
+                                    <use href="/images/icons.svg#rating-empty"></use>
+                                </svg>
+                                <svg width="17" height="15" class="rating">
+                                    <use href="/images/icons.svg#rating-empty"></use>
+                                </svg>
+                                <svg width="17" height="15" class="rating">
+                                    <use href="/images/icons.svg#rating-empty"></use>
+                                </svg>
+                            </div>
+                        </span>
+                        <form id="reviewForm" class="reviewForm">
+                            <textarea name="review" placeholder="Your Review*"></textarea>
+                            <div class="inputs">
+                                <input type="text" name="name" placeholder="Your Name*" />
+                                <input type="email" name="email" placeholder="Your Email*" />
+                            </div>
+                            <div class="form-row checkbox-wrapper">
+                                <label class="remember-me">
+                                    <input type="checkbox" class="hidden-checkbox" />
+                                    <div class="fake-checkbox-wrapper">
+                                        <svg width="16" height="16" class="custom-checkbox">
+                                            <use href="../images/icons.svg#custom-checkbox"></use>
+                                        </svg>
+                                        <svg width="16" height="16" class="custom-checkmark">
+                                            <use href="../images/icons.svg#custom-checkmark"></use>
+                                        </svg>
+                                    </div>
+                                    Save my name, email, and website in this browser for when I leave another comment.
+                                </label>
+                            </div>
+                            <button type="submit" class="btn">SUBMIT</button>
+                            <div id="formMsg" class="message"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div id="shipping" class="tab-content">
+                <div class="accordion-title">shipping policy</div>
+                <p>Vestibulum commodo sapien non elit porttitor, vitae volutpat nibh mollis. Nulla porta risus id neque
+                    tempor, in
+                    efficitur justo imperdiet. Etiam a ex at
+                    ante tincidunt imperdiet. Nunc congue ex vel nisl viverra, sit amet aliquet lectus ullamcorper.
+                    Praesent luctus lacus
+                    non lorem elementum, eu tristique
+                    sapien suscipit. Sed bibendum, ipsum nec viverra malesuada, erat nisi sodales purus, eget hendrerit
+                    dui ligula eu enim.
+                    Ut non est nisi. Pellentesque
+                    tristique pretium dolor eu commodo. Proin iaculis nibh vitae lectus mollis bibendum. Quisque varius
+                    eget urna sit amet
+                    luctus. Suspendisse potenti.
+                    Curabitur ac placerat est, sit amet sodales risus. Pellentesque viverra dui auctor, ullamcorper
+                    turpis pharetra,
+                    facilisis quam.</p>
+                <p>Proin iaculis nibh vitae lectus mollis bibendum. Quisque varius eget urna sit amet luctus.
+                    Suspendisse potenti.
+                    Curabitur ac placerat est, sit amet sodales
+                    risus. Pellentesque viverra dui auctor, ullamcorper turpis pharetra, facilisis quam. Proin iaculis
+                    nibh vitae lectus
+                    mollis bibendum.</p>
+            </div>
+        </section>
+
+        <!-- Related Products -->
+        <section class="related-products container">
+            <h2>You May Also Like</h2>
+            <div class="product-grid"></div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <section class="benefits">
+            <div class="container benefits-container">
+                <h2>Our Benefits</h2>
+                <ul class="benefits-wrapper">
+                    <li class="benefits-item">
+                        <img src="/images/benefits-1.png" alt="Globe with a plane icon" width="60" height="60">
+                        <p>Velit nisl sodales eget donec quis. volutpat orci.</p>
+                    </li>
+                    <li class="benefits-item"><img src="/images/benefits-2.png" alt="Maintenance service truck"
+                            width="60" height="60">
+                        <p>Dolor eu varius. Morbi fermentum velit nisl.</p>
+                    </li>
+                    <li class="benefits-item"><img src="/images/benefits-3.png" alt="Two coins with a dollar sign"
+                            width="60" height="60">
+                        <p>Malesuada fames ac ante ipsum primis in faucibus.</p>
+                    </li>
+                    <li class="benefits-item"><img src="/images/benefits-4.png" alt="Graduation hat" width="60"
+                            height="60">
+                        <p>Nisl sodales eget donec quis. volutpat orci.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="footer container">
+            <div class="footer-three-cols">
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li class="footer-column-list-item><a href=" #">Organisation </a></li>
+                        <li class="footer-column-list-item><a href=" #">Partners</a></li>
+                        <li class="footer-column-list-item><a href=" #">Clients</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Interesting Links</h4>
+                    <ul class="footer-column-list">
+                        <li class="footer-column-list-item><a href=" #">Photo Gallery</a></li>
+                        <li class="footer-column-list-item><a href=" #">Our Team</a></li>
+                        <li class="footer-column-list-item><a href=" #">Socials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Achievements</h4>
+                    <ul>
+                        <li class="footer-column-list-item><a href=" #">Winning Awards</a></li>
+                        <li class="footer-column-list-item><a href=" #">Press</a></li>
+                        <li class="footer-column-list-item><a href=" #">Our Amazing Clients</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-contact-us">
+                <h4>Contact Us</h4>
+                <p>Bendum dolor eu varius. Morbi fermentum velitsodales egetonec. volutpat orci. Sed ipsum felis,
+                    tristique egestas et, convallis ac velitn consequat nec luctus.</p>
+            </div>
+
+            <div class="footer-shipping">
+                <h4>Shipping Information</h4>
+                <p>Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac. Ut sit amet erat nec nibh
+                    rhoncus varius in non lorem. Donec interdum, lectus in convallis pulvinar, enim elit porta
+                    sapien, vel finibus erat felis sed neque. Etiam aliquet neque sagittis erat tincidunt aliquam.
+                </p>
+            </div>
+
+
+            <ul class="footer-icons-wrapper">
+                <li class="footer-item">
+                    <a href="tel:+632366322" class="footer-icon">
+                        <svg width="24" height="24">
+                            <use href="/images/icons.svg#phone"></use>
+                        </svg>
+                        Phone: (+63) 236 6322
+                    </a>
+                </li>
+                <li class="footer-item">
+                    <a href="mailto:public@news.com" class="footer-icon">
+                        <svg width="24" height="18">
+                            <use href="/images/icons.svg#email"></use>
+                        </svg>
+                        public@news.com
+                    </a>
+                </li>
+                <li class="footer-item">
+                    <a href="#">
+                        <svg width="27" height="27">
+                            <use href="/images/icons.svg#opening-hrs"></use>
+                        </svg>
+                    </a>
+                    <p>Mon - Fri: 10am - 6pm <br>
+                        Sat - Sun: 10am - 6pm</p>
+                </li>
+                <li class="footer-item">
+                    <a href="#">
+                        <svg width="20" height="24">
+                            <use href="/images/icons.svg#location"></use>
+                        </svg>
+                    </a>
+                    <address>639 Jade Valley,<br> Washington Dc</address>
+                </li>
+            </ul>
+        </section>
+
+        <p class="copyright">© Copyright 2025</p>
+
+    </footer>
+    <script type="module" src="/js/main.js" defer></script>
+    <script type="module" src="/js/cart.js" defer></script>
+    <script src="../js/home.js" defer></script>
+    <script src="/js/product.js" defer></script>
+</body>
+
+</html>

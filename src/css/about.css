@@ -1,0 +1,327 @@
+/* Hero */
+.hero {
+  color: #fff;
+  text-align: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../images/about/about-hero.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (min-widh) {
+  .featured-discount-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+      url("../images/about/about-hero-2x.jpg");
+  }
+}
+
+.hero .overlay {
+  background: transparent;
+  padding: 10rem 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--border);
+  line-height: 1.5;
+}
+
+.overlay h2 {
+  font-weight: 700;
+  font-size: 3rem;
+  color: var(--white);
+}
+
+/* Features */
+.contact-info {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  gap: 1.5rem;
+  padding: 6rem 0;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.contact-info .info-item {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 1.5rem;
+}
+
+.icon-bg {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  background-color: var(--lila);
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.icon-bg svg {
+  fill: #fff;
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Arrivals */
+.arrivals {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: stretch;
+  gap: 2rem;
+   @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.arrivals-left {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.arrivals-left p {
+ color: var(--brown);
+}
+
+.arrivals-left h2 {
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+
+.arrivals-img {
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  background-image: url("../images/about/about-new-arrivals-0.75x.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0px 20px 80px 0px var(--shadow-form);
+  @media (min-width: 768px) {
+    background-image: url("../images/about/about-new-arrivals.jpg");
+    aspect-ratio: unset;
+  }
+  @media (min-width: 1440px) {
+    background-image: url("../images/about/about-new-arrivals-2x.jpg");
+  }
+}
+
+.arrivals-left a {
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  height: fit-content;
+}
+
+/* Team */
+.team > h2 {
+  text-decoration: solid underline var(--lila) 2px;
+  text-underline-offset: 1rem;
+  font-weight: 900;
+  font-size: 2.5rem;
+}
+
+.team {
+  text-align: center;
+  padding: 8rem 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+article.member {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  place-items: center;
+  font-size: 0.85rem;
+  font-weight: 400;
+}
+
+.member h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* ===============================
+   Offer Section
+=================================*/
+.offer {
+  color: #fff;
+  margin-bottom: 6rem;
+}
+
+/* ===============================
+   Benefits
+=================================*/
+.benefits {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+
+  background-color: var(--brown);
+  background-image: url("../images/bg-lines.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 2rem;
+}
+
+.benefits-container {
+display: grid;
+grid-template-columns: 1fr;
+gap: 2rem;
+}
+
+.benefits h2 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.benefits-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.benefits-item {
+  display: flex;
+  align-self: self-start;
+  align-items: center;
+  gap: 1.25rem;
+  @media (min-width: 768px) {
+    justify-content: center;
+  }
+}
+.benefits-item p {
+  text-align: start;
+  word-wrap: break-word;
+  overflow: hidden;
+  min-width: 4rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+/* ===============================
+   Footer
+=================================*/
+
+.footer {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 1440px) {
+    grid-template-columns: 2fr 1fr;
+    column-gap: 12rem;
+    row-gap: 3rem;
+  }
+}
+
+.footer h4 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.footer-three-cols {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.footer-icons-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  height: fit-content;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.footer-item,
+.footer-icon {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-item svg {
+  fill: var(--lila);
+}
+
+.footer-item p,
+.footer-item address,
+.footer-icon {
+  white-space: nowrap;
+  font-style: normal;
+  color: var(--black);
+}
+
+.footer-col,
+.footer-contact-us,
+.footer-shipping {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  line-height: 2;
+}
+
+
+.copyright {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--copyright);
+  text-align: center;
+  padding: 2rem;
+}

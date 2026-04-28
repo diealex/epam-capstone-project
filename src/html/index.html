@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@2.0.0/modern-normalize.min.css">
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <title>Best Shop</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="upper-header-wrapper">
+                <ul class="social-media-wrapper">
+                    <li class="social-media-item">
+                        <a href="#">
+                            <svg width="20" height="20">
+                                <use href="../images/icons.svg#facebook"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="social-media-item">
+                        <a href="#">
+                            <svg width="25" height="20">
+                                <use href="../images/icons.svg#twitter"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="social-media-item">
+                        <a href="#">
+                            <svg width="20" height="20">
+                                <use href="../images/icons.svg#instagram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+
+
+                <a href="index.html" class="header-logo-wrapper">
+                    <div class="header-logo-bg"><img src="../images/logo-suitcase-1x.png" alt="Best Shop logo"
+                            width="32">
+                    </div>
+                    <h1 class="header-title">Best Shop</h1>
+                </a>
+
+
+                <ul class="header-right-icons">
+                    <li class="header-right-icons-item">
+                        <button id="openLogin" class="login-btn" aria-label="Open Login">
+                            <svg width="24" height="27">
+                                <use href="../images/icons.svg#user"></use>
+                            </svg>
+                        </button>
+                    </li>
+                    <li class="header-right-icons-item">
+                        <a href="../html/cart.html" aria-label="Shopping Cart" class="cart-icon-wrapper" target="_self">
+                            <svg width="27" height="30">
+                                <use href="../images/icons.svg#cart"></use>
+                            </svg>
+                            <span class="cart-count"></span>
+                        </a>
+                    </li>
+                </ul>
+
+                <button class="burger-btn" aria-label="Open Menu">
+                    <svg width="32" height="32">
+                        <use href="../images/icons.svg#burger-icon"></use>
+                    </svg>
+                </button>
+            </div>
+
+            <nav class="nav" aria-label="Main navigation">
+                <ul class="nav-wrapper">
+                    <li class="nav-item"><a href="#" class="active">Home</a></li>
+                    <li class="nav-item dropdown"><a href="catalog.html">Catalog</a></li>
+                    <li class="nav-item"><a href="about.html">About Us</a></li>
+                    <li class="nav-item"><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+
+
+            <div class="mobile-overlay">
+                <nav class="mobile-nav" aria-label="Mobile navigation">
+                    <button class="mobile-close-btn" aria-label="Close Menu">✕</button>
+                    <ul class="mobile-nav-wrapper">
+                        <li class="mobile-nav-item"><a href="#" class="active">Home</a></li>
+                        <li class="mobile-nav-item dropdown"><a href="catalog.html">Catalog</a></li>
+                        <li class="mobile-nav-item"><a href="about.html">About Us</a></li>
+                        <li class="mobile-nav-item"><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                    <ul class="mobile-nav-wrapper-bottom">
+                        <li>
+                            <button id="openLogin" class="login-btn" aria-label="Open Login">
+                                <svg width="24" height="27">
+                                    <use href="../images/icons.svg#user"></use>
+                                </svg>
+                            </button>
+                        </li>
+                        <li>
+                            <a href="../html/cart.html" aria-label="Shopping Cart" class="cart-icon-wrapper"
+                                target="_self">
+                                <svg width="27" height="30">
+                                    <use href="../images/icons.svg#cart"></use>
+                                </svg>
+                                <span class="cart-count"></span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- LOGIN MODAL -->
+    <div id="loginModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content" aria-modal="true">
+            <form id="loginForm" novalidate>
+                <!-- Email -->
+                <label for="loginEmail">Email address <span>*</span></label>
+                <input type="email" id="loginEmail" name="email" required />
+                <p class="error-msg" id="emailError"></p>
+
+                <!-- Password -->
+                <label for="loginPassword">Password <span>*</span></label>
+                <div class="password-wrapper">
+                    <input type="password" id="loginPassword" name="password" required />
+                    <button type="button" class="toggle-password" id="togglePassword" aria-label="Show Password">
+                        <svg width="18" height="14">
+                            <use href="../images/icons.svg#eye-icon"></use>
+                        </svg>
+                    </button>
+                </div>
+                <p class="error-msg" id="passwordError"></p>
+
+                <!-- Remember + Forgot -->
+                <div class="form-row checkbox-wrapper">
+                    <label class="remember-me">
+                        <input type="checkbox" class="hidden-checkbox" />
+                        <div class="fake-checkbox-wrapper">
+                            <svg width="16" height="16" class="custom-checkbox">
+                                <use href="../images/icons.svg#custom-checkbox"></use>
+                            </svg>
+                            <svg width="16" height="16" class="custom-checkmark">
+                                <use href="../images/icons.svg#custom-checkmark"></use>
+                            </svg>
+                        </div>
+                        Remember me
+                    </label>
+
+                    <a href="#" class="forgot-link">Forgot Your Password?</a>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn-submit">Log In</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="intro">
+        <div class="intro-content container">
+            <div class="intro-wrapper-left">
+                <h2>Smart Styles for<br> Every Destination</h2>
+                <p>Phasellus risus turpis, pretium sit amet magna non, molestie ultricies enim.<br>
+                    Nullam pulvinar felis at metus.</p>
+                <a href="catalog.html" class="btn">View All Items</a>
+            </div>
+            <picture class="intro-image">
+                <source media="(min-width: 1440px)" srcset="../images/home/intro-suitcase-2x.png">
+                <source media="(min-width: 1024px)" srcset="../images/home/intro-suitcase-1x.png">
+                <source media="(min-width: 768px)" srcset="../images/home/intro-suitcase-0.75x.png">
+                <img src="../images/home/intro-suitcase-1x.png" alt="Travel suitcase with stamps" loading="lazy">
+            </picture>
+        </div>
+    </section>
+
+    <!-- Featured Section -->
+    <section class="featured container">
+        <article class="review">
+            <div class="author">
+                <picture class="intro-image">
+                    <source media="(min-width: 1440px)" srcset="../images/home/lillian_b_photo-2x.png">
+                    <source media="(min-width: 768px)" srcset="../images/home/lillian_b_photo-1x.png">
+                    <img src="../images/home/lillian_b_photo-1x.png" alt="Lilian Bennett" loading="lazy">
+                </picture>
+                <div>
+                    <h4>Lilian Bennett</h4>
+                    <p>Chief Marketing Officer</p>
+                </div>
+            </div>
+            <h2>Aliquam Faucibus Odionecom.<h2>
+                    <p>Duis vestibulum elit vel neque pharetra vulputate. Quisque scelerisque nisi urna. Duis rutrum non
+                        risus in imperdiet. Proin molestie accumsan nulla sit.</p>
+                    <p> Namaki duis vestibulum elit vel neque pharetra vulputate. Quisque scelerisque nisi urna.</p>
+        </article>
+
+        <article class="discount-banner featured-discount-bg">
+            <div class="discount-content">
+                <h3>25 % Discount</h3>
+                <p>Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut imperdiet et leo in vulputate.</p>
+                <a href="#" class="btn">Get Discount</a>
+            </div>
+        </article>
+    </section>
+
+    <!-- Travel Suitcases -->
+    <section class="categories container">
+        <div class="headline">
+            <h2>Travel Suitcases</h2>
+            <p>Duis vestibulum elit vel neque pharetra.</p>
+        </div>
+        <div class="category-grid">
+            <article class="travel-suitcase-1">
+                <h3>Duis vestibulum elit vel neque.</h3>
+                <p>Duis vestibulum vel neque pharetra vulputate. Quisque scelerisque nisi.</p>
+            </article>
+            <article class="travel-suitcase-2">
+                <h3>Neque vestibulum elit nequvel.</h3>
+                <p>Duis vestibulum vel neque pharetra vulputate. Quisque scelerisque nisi.</p>
+            </article>
+            <article class="travel-suitcase-3">
+                <h3>Elituis stibulum elit velneque.</h3>
+                <p>Duis vestibulum vel neque pharetra vulputate. Quisque scelerisque nisi.</p>
+            </article>
+            <article class="travel-suitcase-4">
+                <h3>Vel vestibulum elit tuvel euqen.</h3>
+                <p>Duis vestibulum vel neque pharetra vulputate. Quisque scelerisque nisi.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Selected Products -->
+    <section class="selected-products container">
+        <div class="headline">
+            <h2>Selected Products</h2>
+            <p>Duis vestibulum elit vel neque pharetra.</p>
+        </div>
+        <div class="selected-products-grid"></div>
+    </section>
+
+    <!-- Offer Section -->
+    <section class="offer">
+        <div class="offer-content container">
+            <div class="offer-left">
+                <h2>50%</h2>
+                <p>Curabitur vulputate arcu odio, ac facilisis diam.</p>
+            </div>
+            <div class="offer-right">
+                <span>offer of the month</span>
+                <p>Curabitur vulputate arcu odio, ac facilisis diam accumsan ut. Ut imperdiet et leo in vulputate.</p>
+                <a href="#" class="btn">Get Offer Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Products -->
+    <section class="new-products container">
+        <div class="headline">
+            <h2>New Products Arrival</h2>
+            <p>Duis vestibulum elit vel neque pharetra.</p>
+        </div>
+        <div class="new-products-grid"></div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials container">
+        <div class="headline">
+            <h2>Our Grateful Customers</h2>
+            <p>Duis vestibulum elit vel neque pharetra.</p>
+        </div>
+        <div class="testimonial-grid">
+            <article class="testimonial">
+                <img srcset="../images/home/ethan-wade.png   1x, ..images/home/ethan-wade-2x.png 2x"
+                    src="../images/home/ethan-wade.png" alt="Ethan Wade" width="98" />
+                <p>Curabitur vulputate arcu ac facilisis diam accumsan ut imperdiet et leo in vulputate.</p>
+                <h4>Ethan Wade, New York</h4>
+            </article>
+            <article class="testimonial">
+                <img srcset="../images/home/jane-reyes.png   1x, ../images/home/jane-reyes-2x.png 2x"
+                    src="../images/home/jane-reyes.png" alt="Jane Reyes" width="98" />
+                <p>Curabitur vulputate arcu ac facilisis diam accumsan ut imperdiet et leo in vulputate.</p>
+                <h4>Jane Reyes, California</h4>
+            </article>
+            <article class="testimonial">
+                <img srcset="../images/home/erica-banks.png   1x, ../images/home/erica-banks-2x.png 2x"
+                    src="../images/home/erica-banks.png" alt="Erica Banks" width="98" />
+                <p>Curabitur vulputate arcu ac facilisis diam accumsan ut imperdiet et leo in vulputate.</p>
+                <h4>Erica Banks, Miami</h4>
+            </article>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <section class="benefits">
+            <div class="container benefits-container">
+                <h2>Our Benefits</h2>
+                <ul class="benefits-wrapper">
+                    <li class="benefits-item">
+                        <img src="../images/benefits-1.png" alt="Globe with a plane icon" width="60" height="60">
+                        <p>Velit nisl sodales eget donec quis. volutpat orci.</p>
+                    </li>
+                    <li class="benefits-item"><img src="../images/benefits-2.png" alt="Maintenance service truck"
+                            width="60" height="60">
+                        <p>Dolor eu varius. Morbi fermentum velit nisl.</p>
+                    </li>
+                    <li class="benefits-item"><img src="../images/benefits-3.png" alt="Two coins with a dollar sign"
+                            width="60" height="60">
+                        <p>Malesuada fames ac ante ipsum primis in faucibus.</p>
+                    </li>
+                    <li class="benefits-item"><img src="../images/benefits-4.png" alt="Graduation hat" width="60"
+                            height="60">
+                        <p>Nisl sodales eget donec quis. volutpat orci.</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="footer container">
+            <div class="footer-three-cols">
+                <div class="footer-col">
+                    <h4>About Us</h4>
+                    <ul>
+                        <li class="footer-column-list-item><a href=" #">Organisation </a></li>
+                        <li class="footer-column-list-item><a href=" #">Partners</a></li>
+                        <li class="footer-column-list-item><a href=" #">Clients</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Interesting Links</h4>
+                    <ul class="footer-column-list">
+                        <li class="footer-column-list-item><a href=" #">Photo Gallery</a></li>
+                        <li class="footer-column-list-item><a href=" #">Our Team</a></li>
+                        <li class="footer-column-list-item><a href=" #">Socials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Achievements</h4>
+                    <ul>
+                        <li class="footer-column-list-item><a href=" #">Winning Awards</a></li>
+                        <li class="footer-column-list-item><a href=" #">Press</a></li>
+                        <li class="footer-column-list-item><a href=" #">Our Amazing Clients</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-contact-us">
+                <h4>Contact Us</h4>
+                <p>Bendum dolor eu varius. Morbi fermentum velitsodales egetonec. volutpat orci. Sed ipsum felis,
+                    tristique egestas et, convallis ac velitn consequat nec luctus.</p>
+            </div>
+
+            <div class="footer-shipping">
+                <h4>Shipping Information</h4>
+                <p>Nulla eleifend pulvinar purus, molestie euismod odio imperdiet ac. Ut sit amet erat nec nibh
+                    rhoncus varius in non lorem. Donec interdum, lectus in convallis pulvinar, enim elit porta
+                    sapien, vel finibus erat felis sed neque. Etiam aliquet neque sagittis erat tincidunt aliquam.
+                </p>
+            </div>
+
+
+            <ul class="footer-icons-wrapper">
+                <li class="footer-item">
+                    <a href="tel:+632366322" class="footer-icon">
+                        <svg width="24" height="24">
+                            <use href="../images/icons.svg#phone"></use>
+                        </svg>
+                        Phone: (+63) 236 6322
+                    </a>
+                </li>
+                <li class="footer-item">
+                    <a href="mailto:public@news.com" class="footer-icon">
+                        <svg width="24" height="18">
+                            <use href="../images/icons.svg#email"></use>
+                        </svg>
+                        public@news.com
+                    </a>
+                </li>
+                <li class="footer-item">
+                    <a href="#">
+                        <svg width="27" height="27">
+                            <use href="../images/icons.svg#opening-hrs"></use>
+                        </svg>
+                    </a>
+                    <p>Mon - Fri: 10am - 6pm <br>
+                        Sat - Sun: 10am - 6pm</p>
+                </li>
+                <li class="footer-item">
+                    <a href="#">
+                        <svg width="20" height="24">
+                            <use href="../images/icons.svg#location"></use>
+                        </svg>
+                    </a>
+                    <address>639 Jade Valley,<br> Washington Dc</address>
+                </li>
+            </ul>
+        </section>
+        <p class="copyright">© Copyright 2025</p>
+    </footer>
+    <script src="../js/home.js" defer></script>
+    <script type="module" src="../js/main.js" defer></script>
+    <script type="module" src="../js/cart.js" defer></script>
+    <script src="../js/product.js" defer></script>
+</body>
+
+</html>
