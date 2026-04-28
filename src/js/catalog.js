@@ -21,7 +21,7 @@ const PRODUCTS_PER_PAGE = 12;
 
 async function fetchProducts() {
   try {
-    const response = await fetch("/assets/data.json");
+    const response = await fetch("../assets/data.json");
     const jsonData = await response.json();
     productsData = jsonData.data;
 
