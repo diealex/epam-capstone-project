@@ -25,7 +25,7 @@ This repository contains a fully responsive, multi-page e-commerce website devel
 ## Technologies
 
 - **HTML5**: Semantic markup
-- **SCSS**: Advanced styling with variables and mixins
+- **CSS**: Сascading styling
 - **JavaScript**: Interactive functionality
 
 ## Getting Started
@@ -40,7 +40,7 @@ This repository contains a fully responsive, multi-page e-commerce website devel
 1. Clone the repository:
 
 ```
-git clone https://autocode.git.epam.com/klochkova.alex91/fundamentals-project-template
+git clone https://github.com/diealex/epam-capstone-project.git
 ```
 
 2. Navigate to the project directory:
