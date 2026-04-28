@@ -4,7 +4,7 @@ export let cart = JSON.parse(localStorage.getItem("cart")) || [];
 export let products = [];
 
 // === Fetch all products once (for lookup by ID) ===
-fetch("/assets/data.json")
+fetch("../assets/data.json")
   .then((res) => {
     if (!res.ok) throw new Error("Failed to load products");
     return res.json();
