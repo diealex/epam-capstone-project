@@ -1,3 +1,5 @@
+import { addToCartById } from "./main.js";
+
 /* ----------------------------
    Load JSON + Render Product
 ----------------------------- */
@@ -161,36 +163,9 @@ function setupAddToCart(product) {
 
   btn.addEventListener("click", function () {
     const qty = Number(document.querySelector(".qty-input").value);
-
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const item = cart.find((i) => i.id === product.id);
-
-    if (item) {
-      item.quantity += qty;
-    } else {
-      cart.push({
-        id: product.id,
-        name: product.name,
-        price: product.price,
-        imageUrl: product.imageUrl,
-        quantity: qty,
-      });
-    }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCartCounter();
-  });
-}
-
-function updateCartCounter() {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const count = cart.reduce((sum, i) => sum + i.quantity, 0);
-  const counter = document.querySelector(".cart-count");
-  if (counter) {
-    counter.textContent = count;
-    counter.style.display = count > 0 ? "flex" : "none";
-  }
-}
+    addToCartById(product.id, qty, btn);
+  })
+};
 
 /* -------------------------------------------
    You May Also Like (4 random items)

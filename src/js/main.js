@@ -63,7 +63,7 @@ loginForm.addEventListener("submit", (e) => {
 
 
 // === Add to cart by ID ===
-export function addToCartById(id) {
+export function addToCartById(id, quantity = 1, target = null) {
   const product = products.find((p) => p.id === id);
   if (!product) return console.error(`Product ${id} not found`);
 
@@ -71,7 +71,7 @@ export function addToCartById(id) {
   if (existing) {
     existing.name=product.name;
     existing.price=product.price;
-    existing.quantity += 1;
+    existing.quantity += quantity;
   } else {
     // cart = [
     //   {
@@ -82,8 +82,12 @@ export function addToCartById(id) {
     // ];
     cart.push({
   id: product.id,
-  quantity: 1,
+  quantity: quantity,
 });
+  }
+  if (target) {
+    target.textContent = "Added!";
+    setTimeout(() => (target.textContent = "Add to Cart"), 1000);
   }
   saveCart();
   renderCartCount();

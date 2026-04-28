@@ -174,9 +174,7 @@ document.addEventListener("click", (e) => {
   }
 
   if (btn.classList.contains("add-to-cart")) {
-    addToCartById(btn.dataset.id);
-    btn.textContent = "Added!";
-    setTimeout(() => (btn.textContent = "Add to Cart"), 1000);
+    addToCartById(btn.dataset.id, 1, btn);
   }
 });
 

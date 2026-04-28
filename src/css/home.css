@@ -878,12 +878,12 @@ input[type="text"] {
 
 .fake-checkbox-wrapper {
   display: grid;
+  position: relative;
 }
 
 /* Custom checkbox box */
 .custom-checkbox {
   display: inline-block;
-  position: relative;
   width: 1rem;
   height: 1rem;
 }
